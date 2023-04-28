@@ -2,8 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\src",
+<<<<<<< Updated upstream
     "\\src\\app"
   ],
   "SelectedNode": "\\src\\app\\app.component.html",
+=======
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\footer"
+  ],
+  "SelectedNode": "\\src\\app\\components\\footer\\footer.component.html",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
