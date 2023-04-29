@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {BackComponent} from "./components/back/back.component";
 import {HomeComponent} from "./components/home/home.component";
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'back',component:BackComponent}
+  {path:'back',component:BackComponent},
+  {path:'app-add-event',component:AddEventComponent}
 ];
 
 @NgModule({
