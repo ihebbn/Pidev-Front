@@ -4,7 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\add-event",
+    "\\src\\app\\components\\back",
     "\\src\\environments"
   ],
+  "SelectedNode": "\\src\\app\\components\\add-event\\add-event.component.ts",
   "PreviewInSolutionExplorer": false
 }
