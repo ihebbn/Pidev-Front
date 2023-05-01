@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+  <tr *ngIf="comments.length > 0">
+    <th>Topic</th>
+    <th>Context</th>
+    <th>Auther</th>
+    <th>Date Of Publication</th>
+    <th >Actions</th>
+  </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let com of comments">
+    <td>
+      {{com.Author}}
+    </td>
+
+    <td>{{com.Comment_text}}</td>
+    <td>{{com.date_of_comm_post}}</td>
+    <td>
+      {{com.nbr_likes_com}}
+    </td>
+    <td class="td-actions text-right">
+      <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" >
+        <i class="now-ui-icons arrows-1_minimal-down"></i>
+      </button>
+      <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(com.idComm)">
+        <i class="now-ui-icons ui-1_simple-delete"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

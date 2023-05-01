@@ -29,6 +29,7 @@
             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
             Dashboard
           </a>
+
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Posts </a>
             <div class="dropdown-menu fade-down m-0">
@@ -37,15 +38,13 @@
             </div>
 
           </div>
+
+
           <a class="nav-link" routerLink="/back/comments">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
             Comments
           </a>
 
-          <a class="nav-link" href="forum.html">
-            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-            Forum
-          </a>
 
           <a class="nav-link" href="teachers.html">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -60,9 +59,41 @@
       <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
         <ol class="breadcrumb mb-4">
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active"></li>
         </ol>
         <div>
+
+          <table class="table table-bordered" style="border: 1px solid #ddd; font-family: Arial, sans-serif;">
+            <thead>
+            <tr *ngIf="publications.length > 0" style="background-color: #f2f2f2;">
+              <th>Topic</th>
+              <th>Context</th>
+              <th>Author</th>
+              <th>Date Of Publication</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pub of publications">
+              <td><input type="text" [(ngModel)]="pub.topic"></td>
+              <td><input type="text" [(ngModel)]="pub.context"></td>
+              <td><input type="text" [(ngModel)]="pub.author"></td>
+              <td><input type="date" [(ngModel)]="pub.date_of_publication"></td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon"  (click)="onUpdateClick(pub.idPub)" style="background-color: #28a745; color: #fff;">
+                  <i class="now-ui-icons arrows-1_minimal-down"></i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(pub.idPub)" style="background-color: #dc3545; color: #fff;">
+                  <i class="now-ui-icons ui-1_simple-delete"></i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" (click)="onSaveClick(pub)" style="background-color: #007bff; color: #fff;">
+                  <i class="now-ui-icons ui-1_check"></i>
+                </button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
 
 
 

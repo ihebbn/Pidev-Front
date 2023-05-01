@@ -29,23 +29,22 @@
             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
             Dashboard
           </a>
+
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Posts </a>
             <div class="dropdown-menu fade-down m-0">
               <a class="dropdown-item" routerLink="/back/posts">menu</a>
-              <a class="dropdown-item" routerLink="/back/addposts">add post</a>
+              <a href="testimonial.html" class="dropdown-item">add post</a>
             </div>
 
           </div>
+
+
           <a class="nav-link" routerLink="/back/comments">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
             Comments
           </a>
 
-          <a class="nav-link" href="forum.html">
-            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-            Forum
-          </a>
 
           <a class="nav-link" href="teachers.html">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -60,12 +59,26 @@
       <div class="container-fluid px-4">
         <h1 class="mt-4">Dashboard</h1>
         <ol class="breadcrumb mb-4">
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active"></li>
         </ol>
-        <div>
-
-
-
+          <div class="add-post">
+            <h2>Ajouter une nouvelle publication</h2>
+            <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="title">Author</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="publication.author" name="title" required>
+              </div>
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <textarea class="form-control" id="topic" [(ngModel)]="publication.topic" name="content" rows="4" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="content">Contenu</label>
+                <textarea class="form-control" id="content" [(ngModel)]="publication.context" name="content" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
         </div>
       </div>
     </main>
