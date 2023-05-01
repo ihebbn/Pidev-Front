@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentComponent } from './components/student/student.component';
 import { AddUserComponentComponent } from './components/add-user-component/add-user-component.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { AdmissionComponent } from './components/admission/admission.component';
 
 
 
@@ -24,7 +25,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     BackComponent,
     AppointmentComponent,
     StudentComponent,
-    AddUserComponentComponent
+    AddUserComponentComponent,
+    AdmissionComponent
     
   ],
   imports: [

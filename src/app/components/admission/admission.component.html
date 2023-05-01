@@ -1,0 +1,15 @@
+
+<label for="">Select</label>
+<select
+class="form-select"
+aria-label="Default select example"
+formControlName="codTyp"
+title="Veuillez choisir le domaine de formation"
+>
+<option
+  *ngFor="let i of days"
+  value="{{ i }}"
+>
+  {{ i }}
+</option>
+</select>

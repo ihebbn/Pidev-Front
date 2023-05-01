@@ -19,5 +19,7 @@ getRdv(){
     console.log(this.listRdv)
   })
 }
-
+DeleteRdv(idRdv: number){
+  this.serv.deleteStudent(idRdv).subscribe(()=> this.serv.getStudent().subscribe(res=> {this.listRdv=res}));
+}
 }

@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddUserComponentComponent implements OnInit {
   student : Student=new Student();
   formStudent!:FormGroup
+  days!:any
   constructor(private serv :AppointmentService, private _router:Router,private fb:FormBuilder) { }
 
 
@@ -36,4 +37,5 @@ export class AddUserComponentComponent implements OnInit {
       //this._router.navigateByUrl("/home/listuser")
     });
  }
+
 }

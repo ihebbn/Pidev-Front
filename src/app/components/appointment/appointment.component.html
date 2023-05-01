@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">idRdv</th>
+        <th scope="col">startTime</th>
+        <th scope="col">endTime</th>
+        <th scope="col">actions</th>
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let i of listRdv">
+        <th scope="row">1</th>
+        <td>{{i.idRdv}}</td>
+        <td>{{i.startTime}}</td>
+        <td>{{i.endTime}}</td>
+        <td>{{i.actions}}</td>
+        <td><button> add</button></td>
+        <td> <button (click)="DeleteRdv(i.idRdv )"type="button"  class="btn btn-primary" >
+        Delete
+        </button></td>
+        
+
+      </tr>
+     
+     
+    </tbody>
+  </table>
+
+  
