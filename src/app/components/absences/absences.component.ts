@@ -24,4 +24,22 @@ export class AbsencesComponent implements OnInit {
     this.absenceervice.deleteAbsence(id).subscribe();
   }
 
+  refreshPage() {
+    window.location.reload();
+  }
+
+  onUpdateClick(idAbs: number): void {
+    // Code to get updatedPublication...
+    const updatedAbsence: {} = { /* ... */ };
+    this.absenceervice.updateAbsence(idAbs, updatedAbsence)
+      .subscribe((result) => {
+        console.log('Absence updated:', result);
+      });
+  }
+  onSaveClick(Abs: Absence) {
+    this.absenceervice.updateAbsence(Abs.idAbsence, Abs)
+      .subscribe(() => console.log('Absence updated successfully'));
+  }
+
+
 }

@@ -21,4 +21,8 @@ export class AbsenceService {
     return this.http.delete(url);
   }
 
+  updateAbsence(idAbs: number, updatedAbsence: {}) {
+    return this.http.put(`http://localhost:8089/pidev/absences/${idAbs}`, updatedAbsence);
+  }
+
 }

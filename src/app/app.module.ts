@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BackComponent } from './components/back/back.component';
 import { AbsencesComponent } from './components/absences/absences.component';
 import {HttpClientModule} from "@angular/common/http";
+import { LessonComponent } from './components/lesson/lesson.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     FooterComponent,
     BackComponent,
-    AbsencesComponent
+    AbsencesComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

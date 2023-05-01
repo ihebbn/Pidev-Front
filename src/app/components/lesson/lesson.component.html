@@ -70,36 +70,35 @@
 
           <table class="table table-bordered" style="border: 1px solid #ddd; font-family: Arial, sans-serif;">
             <thead>
-            <tr *ngIf="absences.length > 0" style="background-color: #f2f2f2;">
-              <th>dateAbsence</th>
-              <th>motif</th>
-              <th>validee</th>
-              <th>student</th>
-              <th>lesson</th>
+            <tr *ngIf="lessons.length > 0" style="background-color: #f2f2f2;">
+              <th>start</th>
+              <th>end</th>
+              <th>classroom</th>
+              <th>teacher</th>
+              <th>subject</th>
             </tr>
             </thead>
-            <tbody>
-            <tr *ngFor="let pub of absences">
-              <td><input type="date" [(ngModel)]="pub.dateAbsence"></td>
-              <td><input type="text" [(ngModel)]="pub.motif"></td>
-              <td><input type="text" [(ngModel)]="pub.validee"></td>
-              <td><input type="number" [(ngModel)]="pub.student.idStudent"></td>
-              <td><input type="number" [(ngModel)]="pub.lesson.idLesson"></td>
+            <tbody >
+            <tr *ngFor="let ls of lessons">
+              <td>{{ls.start}}</td>
+              <td>{{ls.end}}</td>
+              <td>
+                {{ls.classroom.idclassroom}}
+              </td>
+              <td>{{ls.employer.idEmployer}}</td>
+              <td>{{ls.subject.idSubject}}</td>
               <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon"  (click)="onUpdateClick(pub.idAbsence)" (click)="refreshPage()" style="background-color: #28a745; color: #fff;">
+                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" >
                   <i class="now-ui-icons arrows-1_minimal-down"></i>
                 </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(pub.idAbsence)" (click)="refreshPage()" style="background-color: #dc3545; color: #fff;">
+                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(ls.idLesson)" (click)="refreshPage()">
                   <i class="now-ui-icons ui-1_simple-delete"></i>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" (click)="onSaveClick(pub)" (click)="refreshPage()" style="background-color: #007bff; color: #fff;">
-                  <i class="now-ui-icons ui-1_check"></i>
                 </button>
               </td>
             </tr>
-
             </tbody>
           </table>
+
 
 
         </div>
@@ -129,5 +128,6 @@
 <script src="../../../assets/back/js/datatables-simple-demo.js"></script>
 </body>
 </html>
+
 
 
