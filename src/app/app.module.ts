@@ -10,6 +10,7 @@ import { BackComponent } from './components/back/back.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentComponent } from './components/student/student.component';
+import { AddUserComponentComponent } from './components/add-user-component/add-user-component.component';
 
 
 
@@ -21,7 +22,8 @@ import { StudentComponent } from './components/student/student.component';
     FooterComponent,
     BackComponent,
     AppointmentComponent,
-    StudentComponent
+    StudentComponent,
+    AddUserComponentComponent
   ],
   imports: [
     BrowserModule,

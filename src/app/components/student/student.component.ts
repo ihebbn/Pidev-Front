@@ -12,7 +12,7 @@ listStudent!:any[]
 
   ngOnInit(): void {
     this.getStudent ()
-    this.deleteUser
+  
   }
 getStudent(){
   this.serv.getStudent().subscribe(data=>{
@@ -20,9 +20,9 @@ this.listStudent=data
 console.log(this.listStudent)
   })
 }
-deleteUser(id: number) {
-  this.serv.deleteUserById(id).subscribe(() => {
-    console.log('Utilisateur supprimé avec succès')})
-  }
+OndeleteClick(id : number){
+  this.serv.deleteStudent(id).subscribe();
+}
 
 }
+ 

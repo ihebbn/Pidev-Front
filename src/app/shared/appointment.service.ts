@@ -16,7 +16,8 @@ studentUrl="http://localhost:8090/pidev/Etudiant/getStudent";
     getStudent(): Observable<any[]> {
       return this._http.get<any[]>(this.studentUrl);
     }
-    deleteUserById(id:number){
-          return this._http.delete("http://localhost:8090/pidev/Etudiant/delete/{{id}}"+id);
-        }
+    deleteStudent(id:number){
+      const url = `http://localhost:8090/pidev/Etudiant/delete/${id}`;
+      return this._http.delete(url);
+    }
 }

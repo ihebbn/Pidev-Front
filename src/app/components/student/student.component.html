@@ -28,7 +28,9 @@
         <td>{{i.description_and_motivation}}</td>
         <td>{{i.level}}</td>
         <td><button> add</button></td>
-        <td><button (click)="deleteUser(i.id)" type="button" class="btn btn-primary">DELETE</button></td>
+        <td> <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(i.id_student)">
+          <i class="now-ui-icons ui-1_simple-delete"></i>
+        </button></td>
         
 
       </tr>
