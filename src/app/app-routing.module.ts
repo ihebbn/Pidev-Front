@@ -8,7 +8,7 @@ import { StudentComponent } from './components/student/student.component';
 const routes: Routes = [
   {path:'student',component:StudentComponent},
   {path:'',component:HomeComponent},
-  {path:"adduser", component: AddUserComponent},
+  
 
   {path:'Appointment',component:AppointmentComponent},
   {path:'back',component:BackComponent},

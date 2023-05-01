@@ -28,8 +28,8 @@
         <td>{{i.description_and_motivation}}</td>
         <td>{{i.level}}</td>
         <td><button> add</button></td>
-        <td> <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(i.id_student)">
-          <i class="now-ui-icons ui-1_simple-delete"></i>
+        <td> <button (click)="DeleteStudent(i.idStudent )"type="button"  class="btn btn-primary" >
+        Delete
         </button></td>
         
 

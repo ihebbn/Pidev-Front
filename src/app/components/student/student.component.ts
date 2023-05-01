@@ -20,8 +20,8 @@ this.listStudent=data
 console.log(this.listStudent)
   })
 }
-OndeleteClick(id : number){
-  this.serv.deleteStudent(id).subscribe();
+DeleteStudent(idStudent : number){
+  this.serv.deleteStudent(idStudent).subscribe(()=> this.serv.getStudent().subscribe(res=> {this.listStudent=res}));
 }
 
 }
