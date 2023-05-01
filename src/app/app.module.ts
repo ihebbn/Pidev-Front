@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackComponent } from './components/back/back.component';
+import { EventComponent } from './components/event/event.component';
+import { HttpClientModule } from '@angular/common/http';
 import { AddEventComponent } from './components/add-event/add-event.component';
 
 @NgModule({
@@ -16,11 +18,13 @@ import { AddEventComponent } from './components/add-event/add-event.component';
     HomeComponent,
     FooterComponent,
     BackComponent,
+    EventComponent,
     AddEventComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
