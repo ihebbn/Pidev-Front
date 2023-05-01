@@ -7,6 +7,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackComponent } from './components/back/back.component';
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentComponent } from './components/student/student.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +19,14 @@ import { BackComponent } from './components/back/back.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    BackComponent
+    BackComponent,
+    AppointmentComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
