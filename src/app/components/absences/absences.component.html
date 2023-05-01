@@ -44,7 +44,7 @@
             Teachers
           </a>
 
-          <a class="nav-link" href="absence">
+          <a class="nav-link" href="teachers.html">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
             Absences
           </a>
@@ -60,8 +60,38 @@
         <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-
         <div>
+
+
+          <table class="table">
+            <thead>
+            <tr *ngIf="absences.length > 0">
+              <th>dateAbsence</th>
+              <th>motif</th>
+              <th>validee</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr *ngFor="let abs of absences">
+              <td>
+                {{abs.dateAbsence}}
+              </td>
+
+              <td>{{abs.motif}}</td>
+              <td>{{abs.validee}}</td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" >
+                  <i class="now-ui-icons arrows-1_minimal-down"></i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(abs.idAbsence)">
+                  <i class="now-ui-icons ui-1_simple-delete"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+
 
         </div>
 
@@ -90,4 +120,5 @@
 <script src="../../../assets/back/js/datatables-simple-demo.js"></script>
 </body>
 </html>
+
 

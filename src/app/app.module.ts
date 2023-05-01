@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BackComponent } from './components/back/back.component';
+import { AbsencesComponent } from './components/absences/absences.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { BackComponent } from './components/back/back.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    BackComponent
+    BackComponent,
+    AbsencesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
