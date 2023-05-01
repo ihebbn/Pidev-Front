@@ -58,17 +58,17 @@
 
             <table class="table">
               <thead>
-                
-              <tr *ngIf="events.length > 0">
-                <th>idEvent</th>
-                <th>nameEvent</th>
-                <th>Type</th>
-                <th>description</th>
-                <th>place</th>
-                <th>date</th>
-                <th>nbr_of_places</th>
 
-              </tr>
+                <tr *ngIf="events.length > 0">
+                  <th>idEvent</th>
+                  <th>nameEvent</th>
+                  <th>Type</th>
+                  <th>description</th>
+                  <th>place</th>
+                  <th>date</th>
+                  <th>nbr_of_places</th>
+
+                </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let e of events">
@@ -88,9 +88,11 @@
                   </td>
                 </tr>
 
-              
+
               </tbody>
             </table>
+            <button class="btn btn-primary" onclick="location.href='add-event.html'">Add Event</button>
+
           </div>
 
         </div>
