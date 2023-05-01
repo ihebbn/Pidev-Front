@@ -1,5 +1,5 @@
 <div class="body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" [formGroup]="formStudent">
         <div class="row clearfix">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                 <label for="first_name">First Name</label>
@@ -7,7 +7,7 @@
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">
                     <div class="form-line">
-                        <input name="first_name" [(ngModel)]="user.firstName" type="text" id="first_name" class="form-control" placeholder="Enter your first name">
+                        <input name="first_name" formControlName="Firstname" type="text" id="first_name" class="form-control" placeholder="Enter your first name">
                     </div>
                 </div>
             </div>
@@ -16,10 +16,10 @@
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                 <label for="last_name">Last Name</label>
             </div>
-            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+            <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7"> 
                 <div class="form-group">
                     <div class="form-line">
-                        <input name="last_name" [(ngModel)]="user.lastName" type="text" id="last_name" class="form-control" placeholder="Enter your last name">
+                        <input name="last_name"  class="form-control" placeholder="Enter your last name">
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">
                     <div class="form-line">
-                        <input name="email" [(ngModel)]="user.email" type="text" id="email_address_2" class="form-control" placeholder="Enter your email address">
+                        <input name="email" formControlName="Email"  type="text" id="email_address_2" class="form-control" placeholder="Enter your email address">
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                 <div class="form-group">
                     <div class="form-line">
-                        <input name="password" [(ngModel)]="user.password" type="password" id="password_2" class="form-control" placeholder="Enter your password">
+                        <input name="password" type="password" id="password_2" class="form-control" placeholder="Enter your password">
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <div class="form-line">
                         
-                            <select class="form-control" name="role" id="role" [(ngModel)]="user.role">
+                            <select class="form-control" name="role" id="role" >
                                 <option value=""></option>
                                 <option value="ADMINISTRATEUR">ADMINISTRATEUR</option>
                                 <option value="INGENIEUR">INGENIEUR</option>
@@ -72,6 +72,11 @@
         
         <div class="row clearfix">
             <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                <button (click)="addUser()" type="button" class="btn btn-primary m-t-15 waves-effect">Add</button>
+                <button  type="button" (click)="addUser()" class="btn btn-primary m-t-15 waves-effect">Add</button>
             </div>
         </div>
+        
+    </form>
+</div>
+
+

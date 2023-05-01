@@ -11,6 +11,7 @@ import { AppointmentComponent } from './components/appointment/appointment.compo
 import { HttpClientModule } from '@angular/common/http';
 import { StudentComponent } from './components/student/student.component';
 import { AddUserComponentComponent } from './components/add-user-component/add-user-component.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 
@@ -24,11 +25,15 @@ import { AddUserComponentComponent } from './components/add-user-component/add-u
     AppointmentComponent,
     StudentComponent,
     AddUserComponentComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from'@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from '../model/Student';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +21,17 @@ studentUrl="http://localhost:8090/pidev/Etudiant/getStudent";
    
       return this._http.delete("http://localhost:8090/pidev/Etudiant/delete/"+idStudent);
     }
+
+    deleteRdv(idRdv:number){
+      return this._http.delete("http://localhost:8090/pidev/Rdv/delete/"+idRdv);
+    }
+    
+    addStudent(student:any){
+      return this._http.post<any>("http://localhost:8090/pidev/Etudiant/addStudent",student);
+    }
+  
+    
+    
+
+    
 }
