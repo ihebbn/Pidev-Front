@@ -1,32 +1,122 @@
-<table class="table">
-  <thead>
-  <tr *ngIf="comments.length > 0">
-    <th>Topic</th>
-    <th>Context</th>
-    <th>Auther</th>
-    <th>Date Of Publication</th>
-    <th >Actions</th>
-  </tr>
-  </thead>
-  <tbody >
-  <tr *ngFor="let com of comments">
-    <td>
-      {{com.Author}}
-    </td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Dashboard - SB Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link href="../../../assets/back/css/styles.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <!-- Navbar Brand-->
+  <a class="navbar-brand ps-3" href="index.html">ESPRIT</a>
+  <!-- Sidebar Toggle-->
+  <!-- Navbar Search-->
+  <!-- Navbar-->
+</nav>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+      <div class="sb-sidenav-menu">
+        <div class="nav">
+          <div class="sb-sidenav-menu-heading">Core</div>
+          <a class="nav-link" href="index.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+            Dashboard
+          </a>
 
-    <td>{{com.Comment_text}}</td>
-    <td>{{com.date_of_comm_post}}</td>
-    <td>
-      {{com.nbr_likes_com}}
-    </td>
-    <td class="td-actions text-right">
-      <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" >
-        <i class="now-ui-icons arrows-1_minimal-down"></i>
-      </button>
-      <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(com.idComm)">
-        <i class="now-ui-icons ui-1_simple-delete"></i>
-      </button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Posts </a>
+            <div class="dropdown-menu fade-down m-0">
+              <a class="dropdown-item" routerLink="/back/posts">menu</a>
+              <a class="dropdown-item" routerLink="/back/addposts">add post</a>
+            </div>
+
+          </div>
+
+
+          <a class="nav-link" routerLink="/back/comments">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Comments
+          </a>
+
+
+          <a class="nav-link" href="teachers.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Teachers
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-4">
+        <h1 class="mt-4">Dashboard</h1>
+        <ol class="breadcrumb mb-4">
+          <li class="breadcrumb-item active"></li>
+        </ol>
+        <div>
+
+          <table class="table table-bordered" style="border: 1px solid #ddd; font-family: Arial, sans-serif;">
+            <thead>
+            <tr *ngIf="comments.length > 0" style="background-color: #f2f2f2;">
+              <th>Topic</th>
+              <th>Context</th>
+              <th>Author</th>
+              <th>Date Of Publication</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let com of comments">
+              <td><input type="text" [(ngModel)]="com.Author"></td>
+              <td><input type="text" [(ngModel)]="com.Comment_text"></td>
+              <td><input type="text" [(ngModel)]="com.nbr_dislikes_com"></td>
+              <td><input type="date" [(ngModel)]="com.date_of_comm_post"></td>
+              <td class="td-actions text-right">
+
+                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(com.idComm)" style="background-color: #dc3545; color: #fff;">
+                  <i class="now-ui-icons ui-1_simple-delete"></i>
+                </button>
+
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+
+
+
+        </div>
+      </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Your Website 2023</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="../../../assets/back/js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="../../../assets/back/demo/chart-area-demo.js"></script>
+<script src="../../../assets/back/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+<script src="../../../assets/back/js/datatables-simple-demo.js"></script>
+</body>
+</html>
+

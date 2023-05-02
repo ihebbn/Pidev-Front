@@ -7,7 +7,7 @@ import {CommentService} from "../../Services/comment.service";
 @Component({
   selector: 'app-comment-back',
   templateUrl: './comment-back.component.html',
-  styleUrls: ['./comment-back.component.css']
+  styleUrls: ['../../../assets/back/css/styles.css']
 })
 export class CommentBackComponent implements OnInit {
   public comments : Comment[]=[];
@@ -19,6 +19,7 @@ export class CommentBackComponent implements OnInit {
         this.comments = res;
         console.log(this.comments)
       })
+
   }
   OndeleteClick(id : number){
     this.comservice.deleteComment(id).subscribe();

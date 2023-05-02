@@ -1,0 +1,23 @@
+.btn-like {
+  background-color:#2bc5d4;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-dislike{
+  background-color:indianred;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+:host ::ng-deep .br-selected {
+  color: yellow;
+}
+
+:host ::ng-deep .br-unselected {
+  color: grey;
+}
+

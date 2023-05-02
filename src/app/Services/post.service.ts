@@ -27,5 +27,12 @@ export class PostService {
   updatePublication(idPub: number, updatedPublication: {}) {
     return this.http.put(`http://localhost:8089/pidev/Publication/publications/${idPub}`, updatedPublication);
   }
+  likePost(id: number) {
+    return this.http.post<Publication>(`http://localhost:8089/pidev/Publication/${id}/like`, {});
+  }
+  dislikePost(id: number) {
+    return this.http.post<Publication>(`http://localhost:8089/pidev/Publication/${id}/dislike`, {});
+  }
+
 
 }

@@ -23,7 +23,35 @@
         </div>
       </div>
     </div>
-      <a href="back" target="_blank" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+    <a href="back" target="_blank" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
   </div>
 </nav>
 <!-- Navbar End -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card-deck">
+        <div class="card mb-4" *ngFor="let post of publications">
+
+          <div class="card-body">
+            <h5 class="card-title">{{ post.topic }}</h5>
+            <p class="card-text">{{ post.context }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ post.author }}</small>
+          </div>
+          <div class="rating-stars">
+            <i class="fa fa-star" *ngFor="let star of getRatingStars(post.rating)"></i>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-like" color="blue" (click)="onlikeClicked(post.idPub)" (click)="refreshPage()" ><i class="fa fa-thumbs-up"></i> Like<span class="badge badge-light">{{ post.nbr_likes_Pub }}</span></button>
+            <button class="btn btn-dislike" (click)="onDislikeClicked(post.idPub)"(click)="refreshPage()"><i class="fa fa-thumbs-down"></i>Dislike<span class="badge badge-light">{{ post.nbr_dislikes_Pub }}</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

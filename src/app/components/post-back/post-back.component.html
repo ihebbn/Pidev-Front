@@ -70,23 +70,30 @@
               <th>Context</th>
               <th>Author</th>
               <th>Date Of Publication</th>
+              <th>nombre de like</th>
+              <th>nombre de dislike</th>
+              <th>rating</th>
+
               <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let pub of publications">
+            <tr *ngFor="let pub of publications | paginate: { itemsPerPage: 4, currentPage: p }">
               <td><input type="text" [(ngModel)]="pub.topic"></td>
               <td><input type="text" [(ngModel)]="pub.context"></td>
               <td><input type="text" [(ngModel)]="pub.author"></td>
               <td><input type="date" [(ngModel)]="pub.date_of_publication"></td>
+              <td><input type="text" [(ngModel)]="pub.nbr_likes_Pub"></td>
+              <td><input type="text" [(ngModel)]="pub.nbr_dislikes_Pub"></td>
+              <td><input type="text" [(ngModel)]="pub.rating"></td>
               <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon"  (click)="onUpdateClick(pub.idPub)" style="background-color: #28a745; color: #fff;">
+                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon"  (click)="onUpdateClick(pub.idPub)" (click)="refreshPage()" style="background-color: #28a745; color: #fff;">
                   <i class="now-ui-icons arrows-1_minimal-down"></i>
                 </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(pub.idPub)" style="background-color: #dc3545; color: #fff;">
+                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(pub.idPub)" (click)="refreshPage()"style="background-color: #dc3545; color: #fff;">
                   <i class="now-ui-icons ui-1_simple-delete"></i>
                 </button>
-                <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" (click)="onSaveClick(pub)" style="background-color: #007bff; color: #fff;">
+                <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon" (click)="onSaveClick(pub)"(click)="refreshPage()" style="background-color: #007bff; color: #fff;">
                   <i class="now-ui-icons ui-1_check"></i>
                 </button>
               </td>
@@ -94,7 +101,9 @@
 
             </tbody>
           </table>
-
+          <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
 
 
         </div>

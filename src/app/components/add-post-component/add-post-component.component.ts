@@ -10,8 +10,7 @@ import {PostService} from "../../Services/post.service";
 export class AddPostComponentComponent {
 
   publication: Publication = new Publication();
-    errorMessage = '';
-
+  errorMessage = '';
   constructor(private pubService : PostService) { }
 
   onSubmit(): void {

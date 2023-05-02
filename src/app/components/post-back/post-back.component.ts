@@ -10,6 +10,7 @@ import {Publication} from "../../Models/Publication";
 export class PostBackComponent implements OnInit {
   public publications : Publication[]=[];
   public updatedPublication: Publication[]=[];
+  p: number = 1;
 
   constructor(private pubService : PostService) { }
 
@@ -36,6 +37,9 @@ export class PostBackComponent implements OnInit {
   onSaveClick(pub: Publication) {
     this.pubService.updatePublication(pub.idPub, pub)
       .subscribe(() => console.log('Publication updated successfully'));
+  }
+  refreshPage() {
+    window.location.reload();
   }
 
 
