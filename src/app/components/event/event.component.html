@@ -55,11 +55,13 @@
             <li class="breadcrumb-item active">Dashboard</li>
           </ol>
           <div>
-
+            <div class="search-hero" class="col-md-3">
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for an event">
+            </div>
             <table class="table">
               <thead>
 
-                <tr *ngIf="events.length > 0">
+                <tr *ngIf="events.length > 0 ">
                   <th>idEvent</th>
                   <th>nameEvent</th>
                   <th>Type</th>
@@ -67,11 +69,11 @@
                   <th>place</th>
                   <th>date</th>
                   <th>nbr_of_places</th>
-
+                  <th  >Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let e of events  | paginate
+                <tr *ngFor="let e of events | filter:searchText |paginate
               : {
                   itemsPerPage: tableSize,
                   currentPage: page,
@@ -92,10 +94,19 @@
 
                   <td class="td-actions text-right">
 
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(e.idEvent)">
-                      <i class="now-ui-icons ui-1_simple-delete"></i>
-                    </button>
+                    <div class="d-flex justify-content-center">
+                      <button class="btn btn-danger mr-2" (click)="OndeleteClick(e.idEvent)">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                      <button class="btn btn-primary mr-2" >
+                        <i class="bi bi-pencil-fill"></i>
+                      </button>
+                      <button class="btn btn-primary" >
+                        <i class="bi bi-eye-fill"></i>
+                      </button>
+                    </div>
                   </td>
+                 
                 </tr>
 
 

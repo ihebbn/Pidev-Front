@@ -17,6 +17,8 @@ export class EventComponent implements OnInit {
   count: number = 0;
   tableSize: number = 3;
   tableSizes: any = [3, 6, 9, 12];
+  title = 'Angular Search Using ng2-search-filter';
+  searchText!: any;
   constructor(private eventservice: EventService) {
       
   }
