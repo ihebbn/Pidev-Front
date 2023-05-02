@@ -1,27 +1,24 @@
 <div>
-
-  <form method="POST" action="/add-event">
+  <form (submit)="addPlanOffer()">
     <label for="nameEvent">Event Name:</label><br>
-    <input type="text" id="nameEvent" name="nameEvent"><br>
+    <input type="text" id="nameEvent" name="nameEvent" [(ngModel)]="newEvent.nameEvent"><br>
 
     <label for="type">Type:</label><br>
-    <input type="text" id="type" name="type"><br>
+    <input type="text" id="Type" name="Type" [(ngModel)]="newEvent.Type"><br>
 
     <label for="description">Description:</label><br>
-    <textarea id="description" name="description"></textarea><br>
+    <textarea id="description" name="description" [(ngModel)]="newEvent.description"></textarea><br>
 
     <label for="place">Place:</label><br>
-    <input type="text" id="place" name="place"><br>
+    <input type="text" id="place" name="place" [(ngModel)]="newEvent.place"><br>
 
     <label for="date">Date:</label><br>
-    <input type="date" id="date" name="date"><br>
+    <input type="date" id="date" name="date" [(ngModel)]="newEvent.date"><br>
 
     <label for="nbr_of_places">Number of Places:</label><br>
-    <input type="number" id="nbr_of_places" name="nbr_of_places"><br>
-
-    <label for="image">Image:</label><br>
-    <input type="file" id="image" name="image"><br>
-
-    <input type="submit" value="Submit">
+    <input type="number" id="nbr_of_places" name="nbr_of_places" [(ngModel)]="newEvent.nbr_of_places"><br>
+    <button type="submit">Submit</button>
   </form>
 </div>
+  
+  

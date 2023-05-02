@@ -10,6 +10,7 @@ import { Event } from "../Models/event";
 export class EventService {
 
   constructor(private http: HttpClient) { }
+  BASE_URL_AJOUT ='http://localhost:8089/pidev/addEvent'
 
   getEvent() {
     return this.http.get<Event[]>("http://localhost:8089/pidev/retrieve-all-events")
@@ -25,6 +26,10 @@ export class EventService {
   addEvent(event: Event): Observable<Event> {
     const url = `http://localhost:8089/pidev/addEvent`;
     return this.http.post<Event>(url, event);
+  }
+
+  addPlan(Event: Event): Observable<any> {
+    return this.http.post<Event>(`${this.BASE_URL_AJOUT}`, Event)
   }
 
 

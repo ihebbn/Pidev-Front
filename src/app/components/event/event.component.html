@@ -71,7 +71,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let e of events">
+                <tr *ngFor="let e of events  | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index">
                   <td>
                     {{e.idEvent}}
                   </td>
@@ -85,13 +91,23 @@
                   <td>{{e.nbr_of_places}}</td>
 
                   <td class="td-actions text-right">
+
+                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" (click)="OndeleteClick(e.idEvent)">
+                      <i class="now-ui-icons ui-1_simple-delete"></i>
+                    </button>
                   </td>
                 </tr>
 
 
               </tbody>
             </table>
-            <button class="btn btn-primary" onclick="location.href='add-event.html'">Add Event</button>
+            <div class="d-flex justify-content-center">
+              <pagination-controls previousLabel="Prev"
+                                   nextLabel="Next"
+                                   (pageChange)="onTableDataChange($event)">
+              </pagination-controls>
+            </div>
+            <button class="btn btn-primary" onclick="location.href='add-event'">Add Event</button>
 
           </div>
 

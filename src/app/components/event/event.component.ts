@@ -11,8 +11,12 @@ import { EventService } from '../../Services/event.service';
 })
 export class EventComponent implements OnInit {
 
-  public events: Event[] = [];
-
+   events!: any;
+  POSTS: any;
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 3;
+  tableSizes: any = [3, 6, 9, 12];
   constructor(private eventservice: EventService) {
       
   }
@@ -24,9 +28,7 @@ export class EventComponent implements OnInit {
 
   afficher() {
 
-    
-
-
+  
     this.eventservice.getEvent().subscribe((response: any) => {
       this.events = response;
       console.log("jjgjh", this.events);
@@ -39,21 +41,28 @@ export class EventComponent implements OnInit {
     );
   }
 
-  delete(i: any) {
-    this.events.splice(i, 1);
+  
+
+  reloadData() {
+    this.events = this.eventservice.getEvent();
   }
 
-  deletedev(id: number) {
-    if (confirm("Do you really want to delete this item?")) {
+  OndeleteClick = (id: number) => {
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce poste?')) {
       this.eventservice.deleteEvent(id).subscribe(() => {
-        this.events.forEach((e, index) => {
-          if (e.idEvent === id) {
-            this.events.splice(index, 1);
-          }
-        });
+        // Recharge la page après la suppression
+        window.location.reload();
       });
     }
   }
 
-
+  onTableDataChange(event: any) {
+    this.page = event;
+    this.afficher();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    this.afficher();
+  }
 }

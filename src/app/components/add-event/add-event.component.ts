@@ -10,22 +10,27 @@ import { EventService } from '../../Services/event.service';
 export class AddEventComponent implements OnInit {
 
   newEvent: Event = new Event(); // create a new event object to hold form data
-
+   
   constructor(private eventService: EventService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
+    console.log('Submitting form:', this.newEvent);
     this.eventService.addEvent(this.newEvent).subscribe(
       response => {
-        console.log(response); // log the server's response to the console
+        console.log('Server response:', response);
       },
       error => {
-        console.log(error); // log any errors to the console
+        console.log('Error:', error);
       }
     );
   }
 
+  addPlanOffer() {
+    this.eventService.addPlan(this.newEvent).subscribe();
+    this.newEvent = new Event();
+  }
 
 }

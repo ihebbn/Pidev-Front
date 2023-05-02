@@ -10,6 +10,8 @@ import { BackComponent } from './components/back/back.component';
 import { EventComponent } from './components/event/event.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEventComponent } from './components/add-event/add-event.component';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { AddEventComponent } from './components/add-event/add-event.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
