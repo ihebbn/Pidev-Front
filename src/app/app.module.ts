@@ -11,6 +11,9 @@ import { AbsencesComponent } from './components/absences/absences.component';
 import {HttpClientModule} from "@angular/common/http";
 import { LessonComponent } from './components/lesson/lesson.component';
 import {FormsModule} from "@angular/forms";
+import { VerifabsenceComponent } from './components/verifabsence/verifabsence.component';
+import { AddabsenceComponent } from './components/addabsence/addabsence.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     BackComponent,
     AbsencesComponent,
-    LessonComponent
+    LessonComponent,
+    VerifabsenceComponent,
+    AddabsenceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

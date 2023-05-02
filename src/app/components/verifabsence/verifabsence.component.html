@@ -39,18 +39,15 @@
             Forum
           </a>
 
-          <a class="nav-link" href="verif">
+          <a class="nav-link" href="teachers.html">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
             Teachers
           </a>
 
-          <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Absence </a>
-            <div class="dropdown-menu fade-down m-0">
-              <a class="dropdown-item" href="absence">menu</a>
-              <a class="dropdown-item" href="addabsence">Add Absence</a>
-            </div>
-            </div>
+          <a class="nav-link" href="absence">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Absences
+          </a>
 
           <a class="nav-link" href="lesson">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -68,8 +65,17 @@
         <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-
         <div>
+
+          <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+            <div class="form-group">
+              <label for="idStudent">ID Student:</label>
+              <input type="number" class="form-control" id="idStudent" name="idStudent" required [(ngModel)]="student.idStudent">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
 
         </div>
 
@@ -98,4 +104,6 @@
 <script src="../../../assets/back/js/datatables-simple-demo.js"></script>
 </body>
 </html>
+
+
 

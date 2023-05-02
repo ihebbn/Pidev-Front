@@ -39,7 +39,7 @@
             Forum
           </a>
 
-          <a class="nav-link" href="verif">
+          <a class="nav-link" href="teachers.html">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
             Teachers
           </a>
@@ -48,9 +48,9 @@
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Absence </a>
             <div class="dropdown-menu fade-down m-0">
               <a class="dropdown-item" href="absence">menu</a>
-              <a class="dropdown-item" href="addabsence">Add Absence</a>
+              <a class="dropdown-item" routerLink="">Add Absence</a>
             </div>
-            </div>
+          </div>
 
           <a class="nav-link" href="lesson">
             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -68,10 +68,29 @@
         <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-
         <div>
 
+
+
+
+
+          <div class="add-post">
+            <h2>Ajouter une nouvelle absence</h2>
+            <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="title">Absence Date</label>
+                <input type="date" class="form-control" id="title" [(ngModel)]="absence.dateAbsence" name="title" required>
+              </div>
+              <div class="form-group">
+                <label for="topic">Motif</label>
+                <textarea class="form-control" id="topic" [(ngModel)]="absence.motif" name="content" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+          </div>
         </div>
+
 
       </div>
     </main>
@@ -98,4 +117,6 @@
 <script src="../../../assets/back/js/datatables-simple-demo.js"></script>
 </body>
 </html>
+
+
 
