@@ -56,45 +56,49 @@
           </ol>
           <div>
             <form #f="ngForm" (submit)="addevent()">
-              <label for="nameEvent">Event Name:</label><br>
-              <input type="text" id="nameEvent" name="nameEvent" [(ngModel)]="newEvent.nameEvent" placeholder="Enter Name" minlength="3" required #title="ngModel">
-              <div *ngIf="title.invalid && title.touched">
-                <div class=" alert alert-danger">
-                  <div *ngIf="title.errors?.['required']">Name is required</div>
-                  <div *ngIf="title.errors?.['minlength']"> Name must contain more than 2 characters </div>
-                </div>
-              </div><br>
-
-              <label for="type">Type:</label><br>
-              <input type="text" id="Type" name="Type" [(ngModel)]="newEvent.Type" placeholder="Enter Type" minlength="3" required #type="ngModel">
-              <div *ngIf="type.invalid && type.touched">
-                <div class=" alert alert-danger">
-                  <div *ngIf="title.errors?.['required']">Type is required</div>
-                  <div *ngIf="title.errors?.['minlength']"> Type must contain more than 2 characters </div>
-                </div>
-              </div><br>
-
-              <label for="description">Description:</label><br>
-              <textarea id="description" name="description" [(ngModel)]="newEvent.description" placeholder="describe the event" minlength="10" required #descrp="ngModel"></textarea>
-              <div *ngIf="descrp.invalid && descrp.touched">
-                <div class=" alert alert-danger">
-                  <div *ngIf="title.errors?.['required']">Descriptions is required</div>
-                  <div *ngIf="title.errors?.['minlength']"> Description must contain more than 10 characters </div>
-                </div>
-              </div><br>
-
-              <label for="place">Place:</label><br>
-              <input type="text" id="place" name="place" [(ngModel)]="newEvent.place" placeholder="Where the event will take place" minlength="3" required #place="ngModel">
-              <div *ngIf="place.invalid && place.touched">
-                <div class=" alert alert-danger">
-                  <div *ngIf="title.errors?.['required']">Place is required</div>
-                  <div *ngIf="title.errors?.['minlength']"> Place must contain more than 2 characters </div>
-                </div>
+              <div class="form-group">
+                <label for="nameEvent">Event Name:</label><br>
+                <input type="text" id="nameEvent" name="nameEvent" [(ngModel)]="newEvent.nameEvent" placeholder="Enter Name" minlength="3" required #title="ngModel">
+                <div *ngIf="title.invalid && title.touched">
+                  <div class=" alert alert-danger">
+                    <div *ngIf="title.errors?.['required']">Name is required</div>
+                    <div *ngIf="title.errors?.['minlength']"> Name must contain more than 2 characters </div>
+                  </div>
                 </div><br>
+              </div>
 
-                <label for="date">Date:</label><br>
-                <input type="date" id="date" name="date" [(ngModel)]="newEvent.date"><br>
+              <div class="form-group">
+                <label for="type">Type:</label><br>
+                <input type="text" id="Type" name="Type" [(ngModel)]="newEvent.Type" placeholder="Enter Type" minlength="3" required #type="ngModel">
+                <div *ngIf="type.invalid && type.touched">
+                  <div class=" alert alert-danger">
+                    <div *ngIf="type.errors?.['required']">Type is required</div>
+                    <div *ngIf="type.errors?.['minlength']"> Type must contain more than 2 characters </div>
+                  </div>
+                </div>
+              </div><br>
 
+              <div class="form-group">
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" [(ngModel)]="newEvent.description"></textarea>
+
+              </div><br>
+
+              <div class="form-group">
+                <label for="place">Place:</label><br>
+                <input type="text" id="place" name="place" [(ngModel)]="newEvent.place" placeholder="Where the event will take place" minlength="3" required #place="ngModel">
+                <div *ngIf="place.invalid && place.touched">
+                  <div class=" alert alert-danger">
+                    <div *ngIf="place.errors?.['required']">Place is required</div>
+                    <div *ngIf="place.errors?.['minlength']"> Place must contain more than 2 characters </div>
+                  </div>
+                </div>
+              </div><br>
+
+              <label for="date">Date:</label><br>
+              <input type="date" id="date" name="date" [(ngModel)]="newEvent.date"><br>
+
+              <div class="form-group">
                 <label for="nbr_of_places">Number of Places:</label><br>
                 <input type="number" id="nbr_of_places" name="nbr_of_places" [(ngModel)]="newEvent.nbr_of_places" placeholder="Enter number of places availble" min=10 max=4999 required #quantity="ngModel">
                 <div *ngIf="quantity.invalid && quantity.touched ">
@@ -103,6 +107,7 @@
                     <div *ngIf="quantity.errors?.['min']"> places must be more than 10 </div>
                     <div *ngIf="quantity.errors?.['max']"> Qantity must be less than 5000 </div>
                   </div>
+                </div>
                 </div><br>
                 <button class="btn btn-success" [disabled]="f.invalid" type="submit" onclick="location.href='app-add-event'">  Add </button>
             </form>
