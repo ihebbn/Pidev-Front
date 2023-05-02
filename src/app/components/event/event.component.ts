@@ -50,7 +50,7 @@ export class EventComponent implements OnInit {
   }
 
   OndeleteClick = (id: number) => {
-    if (confirm('Êtes-vous sûr de vouloir supprimer ce poste?')) {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cet evenement?')) {
       this.eventservice.deleteEvent(id).subscribe(() => {
         // Recharge la page après la suppression
         window.location.reload();
