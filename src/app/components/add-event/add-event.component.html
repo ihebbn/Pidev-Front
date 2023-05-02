@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,12 +50,12 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Add event</h1>
+          <h1 class="mt-4" align="center">Add event</h1>
           <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item active"></li>
           </ol>
           <div>
-            <form (submit)="addPlanOffer()">
+            <form (submit)="addevent()">
               <label for="nameEvent">Event Name:</label><br>
               <input type="text" id="nameEvent" name="nameEvent" required minlength="2" [(ngModel)]="newEvent.nameEvent"><br>
 
@@ -76,7 +73,7 @@
 
               <label for="nbr_of_places">Number of Places:</label><br>
               <input type="number" id="nbr_of_places" name="nbr_of_places" [(ngModel)]="newEvent.nbr_of_places"><br>
-              <button class="btn btn-primary" type="submit" onclick="location.href='app-add-event'">Add Event</button>
+              <button class="btn btn-success" type="submit" onclick="location.href='app-add-event'">  Add </button>
             </form>
           </div>
 

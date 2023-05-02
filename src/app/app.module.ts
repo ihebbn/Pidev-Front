@@ -13,6 +13,7 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AfficheEventComponent } from './components/affiche-event/affiche-event.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FooterComponent,
     BackComponent,
     EventComponent,
-    AddEventComponent
+    AddEventComponent,
+    AfficheEventComponent
   ],
   imports: [
     BrowserModule,
