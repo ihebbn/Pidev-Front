@@ -10,8 +10,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   { path: 'back', component: BackComponent },
   { path: 'app-add-event', component: EventComponent },
-  { path: 'add-event', component: AddEventComponent },
-  { path: ' app - affiche - event', component: AfficheEventComponent }
+  { path: 'add-event', component: AddEventComponent }
+  
 
 
 

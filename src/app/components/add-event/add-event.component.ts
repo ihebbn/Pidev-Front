@@ -30,8 +30,10 @@ export class AddEventComponent implements OnInit {
   }
 
   addevent() {
-    this.eventService.addPlan(this.newEvent).subscribe();
+    this.eventService.addeventt(this.newEvent).subscribe();
     this.newEvent = new Event();
   }
+
+
 
 }

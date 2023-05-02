@@ -28,9 +28,10 @@ export class EventService {
     return this.http.post<Event>(url, event);
   }
 
-  addPlan(Event: Event): Observable<any> {
+  addeventt(Event: Event): Observable<any> {
     return this.http.post<Event>(`${this.BASE_URL_AJOUT}`, Event)
   }
 
+  
 
 }

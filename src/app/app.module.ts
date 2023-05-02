@@ -15,6 +15,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AfficheEventComponent } from './components/affiche-event/affiche-event.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { AfficheEventComponent } from './components/affiche-event/affiche-event.
     BackComponent,
     EventComponent,
     AddEventComponent,
-    AfficheEventComponent
+    AfficheEventComponent,
+   
   ],
   imports: [
     BrowserModule,
