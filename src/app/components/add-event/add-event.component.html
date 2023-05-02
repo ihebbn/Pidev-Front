@@ -68,7 +68,7 @@
               </div>
 
               <div class="form-group">
-                <label for="type">Type:</label><br>
+                <label for="Type">Type:</label><br>
                 <input type="text" id="Type" name="Type" [(ngModel)]="newEvent.Type" placeholder="Enter Type" minlength="3" required #type="ngModel">
                 <div *ngIf="type.invalid && type.touched">
                   <div class=" alert alert-danger">

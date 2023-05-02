@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, Observable } from "rxjs";
+import { map, Observable, switchMap } from "rxjs";
 import { Event } from "../Models/event";
 
 
@@ -31,7 +31,15 @@ export class EventService {
   addeventt(Event: Event): Observable<any> {
     return this.http.post<Event>(`${this.BASE_URL_AJOUT}`, Event)
   }
+  
+  updateevent(data: any) {
+    return this.http.put('http://localhost:8089/pidev/events/${id}', data)
+  } 
+ 
 
+  getEventById(id: number): Observable<Event> {
+    return this.http.get<Event>("http://localhost:8089/pidev/retrieve-event/" + id);
+  }
   
 
 }

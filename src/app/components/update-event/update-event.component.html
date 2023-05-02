@@ -1,0 +1,43 @@
+<form (ngSubmit)="updateevent()" #postForm="ngForm">
+
+  <div class="form-group">
+    <label for="nameEvent">nameEvent</label>
+    <input class="form-control" id="nameEvent" required [(ngModel)]="uevent.description" name="nameEvent">
+  </div>
+
+  <div class="form-group">
+    <label for="type">type</label>
+    <input class="form-control" id="Type" required [(ngModel)]="uevent.Type" name="Type">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Type</label>
+    <input type="description" class="form-control" id="description" required [(ngModel)]="uevent.description" name="description">
+  </div>
+
+
+  <div class="form-group">
+    <label for="place">description</label>
+    <input class="form-control" id="place" required [(ngModel)]="uevent.place" name="place">
+  </div>
+
+  <div class="form-group">
+    <label for="realizationprice">place</label>
+    <input class="form-control" id="place" required [(ngModel)]="uevent.place" name="place">
+  </div>
+
+  <div class="form-group">
+    <label for="room1">date</label>
+    <input class="form-control" id="date" required [(ngModel)]="uevent.date" name="date">
+  </div>
+
+  <div class="form-group">
+    <label for="nbr_of_places">place</label>
+    <input class="form-control" id="nbr_of_places" required [(ngModel)]="uevent.nbr_of_places" name="nbr_of_places">
+  </div>
+
+ 
+
+  <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Update Plan</button>
+
+</form>

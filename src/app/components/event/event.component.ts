@@ -67,4 +67,6 @@ export class EventComponent implements OnInit {
     this.page = 1;
     this.afficher();
   }
+
+  
 }
