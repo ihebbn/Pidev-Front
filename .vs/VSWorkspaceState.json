@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\affiche-event",
+    "\\src\\app\\components\\event",
     "\\src\\app\\components\\header",
     "\\src\\app\\components\\home",
     "\\src\\app\\components\\update-event",
     "\\src\\assets",
     "\\src\\assets\\css"
   ],
-  "SelectedNode": "\\src\\app\\Services\\event.service.ts",
+  "SelectedNode": "\\src\\app\\components\\event",
   "PreviewInSolutionExplorer": false
 }
